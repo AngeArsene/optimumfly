@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import yellowFavicon from '../../assets/favicon/favicon-yellow-32x32.png';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center">
-                <img src="assets/favicon/favicon-yellow-32x32.png" alt="" />
+                <img src={yellowFavicon} alt="" />
               </div>
               <span className="font-bold text-lg">{t('brandName')}</span>
             </div>

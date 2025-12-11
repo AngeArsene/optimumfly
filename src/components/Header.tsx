@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import favicon from '../../assets/favicon/favicon-32x32.png';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ export function Header() {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-              <img src="assets/favicon/favicon-32x32.png" alt="" />
+              <img src={favicon} alt="" />
             </div>
             <span className="font-bold text-xl text-primary-900 hidden sm:block">
               {t('brandName')}

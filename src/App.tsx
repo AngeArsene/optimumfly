@@ -9,11 +9,13 @@ import { HowItWorks } from './pages/HowItWorks';
 import { Resources } from './pages/Resources';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
