@@ -2,6 +2,12 @@
 # React TypeScript Application - .htaccess Configuration
 # =====================================================
 
+<IfModule mod_headers.c>
+    # Allow embedding from Google Forms
+    Header set Content-Security-Policy "frame-ancestors 'self' https://docs.google.com"
+    Header set X-Frame-Options "ALLOW-FROM https://docs.google.com"
+</IfModule>
+
 # Enable Rewrite Engine
 <IfModule mod_rewrite.c>
   RewriteEngine On

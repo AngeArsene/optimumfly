@@ -1,81 +1,14 @@
-import { useState, FormEvent } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function Contact() {
   const { language, t } = useLanguage();
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    city: '',
-    phone: '',
-    email: '',
-    projectType: '',
-    targetCountry: '',
-    description: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        city: '',
-        phone: '',
-        email: '',
-        projectType: '',
-        targetCountry: '',
-        description: '',
-      });
-    }, 3000);
+  const handleIframeLoad = () => {
+    setIsIframeLoaded(true);
   };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const projectTypes = [
-    { value: '', label: language === 'fr' ? 'Sélectionnez un type' : 'Select a type' },
-    {
-      value: 'student',
-      label: language === 'fr' ? 'Visa étudiant' : 'Student visa',
-    },
-    {
-      value: 'visitor',
-      label: language === 'fr' ? 'Visa visiteur/tourisme' : 'Visitor/tourism visa',
-    },
-    {
-      value: 'worker',
-      label: language === 'fr' ? 'Travailleur qualifié' : 'Skilled worker',
-    },
-    {
-      value: 'family',
-      label: language === 'fr' ? 'Regroupement familial' : 'Family reunification',
-    },
-    {
-      value: 'passport',
-      label: language === 'fr' ? 'Passeport camerounais' : 'Cameroonian passport',
-    },
-    { value: 'other', label: language === 'fr' ? 'Autre' : 'Other' },
-  ];
-
-  const countries = [
-    { value: '', label: language === 'fr' ? 'Sélectionnez un pays' : 'Select a country' },
-    { value: 'canada', label: 'Canada' },
-    { value: 'france', label: 'France' },
-    { value: 'uk', label: language === 'fr' ? 'Royaume-Uni' : 'United Kingdom' },
-    { value: 'usa', label: language === 'fr' ? 'États-Unis' : 'United States' },
-    { value: 'other', label: language === 'fr' ? 'Autre' : 'Other' },
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -96,174 +29,64 @@ export function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="bg-white rounded-2xl shadow-lg p-4 md:p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   {language === 'fr'
                     ? 'Décrivez-nous votre projet'
                     : 'Describe your project'}
                 </h2>
 
-                {submitted ? (
-                  <div className="bg-secondary-50 border border-secondary-200 rounded-xl p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-4">
-                      <CheckCircle className="w-8 h-8 text-secondary-600" />
+                {/* Loading indicator */}
+                {!isIframeLoaded && (
+                  <div className="flex items-center justify-center py-12">
+                    <div className="text-center">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+                      <p className="text-gray-600">
+                        {language === 'fr' ? 'Chargement du formulaire...' : 'Loading form...'}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {language === 'fr' ? 'Message envoyé !' : 'Message sent!'}
-                    </h3>
-                    <p className="text-gray-600">
-                      {language === 'fr'
-                        ? 'Nous vous répondrons dans les 24h ouvrées.'
-                        : 'We will respond within 24 business hours.'}
-                    </p>
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {language === 'fr' ? 'Prénom' : 'First name'} *
-                        </label>
-                        <input
-                          type="text"
-                          name="firstName"
-                          value={formData.firstName}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {language === 'fr' ? 'Nom' : 'Last name'} *
-                        </label>
-                        <input
-                          type="text"
-                          name="lastName"
-                          value={formData.lastName}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {language === 'fr' ? 'Ville au Cameroun' : 'City in Cameroon'} *
-                      </label>
-                      <input
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          WhatsApp / {language === 'fr' ? 'Téléphone' : 'Phone'} *
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Email *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {language === 'fr' ? 'Type de projet' : 'Project type'} *
-                        </label>
-                        <select
-                          name="projectType"
-                          value={formData.projectType}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                        >
-                          {projectTypes.map((type) => (
-                            <option key={type.value} value={type.value}>
-                              {type.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {language === 'fr' ? 'Pays visé' : 'Target country'} *
-                        </label>
-                        <select
-                          name="targetCountry"
-                          value={formData.targetCountry}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                        >
-                          {countries.map((country) => (
-                            <option key={country.value} value={country.value}>
-                              {country.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {language === 'fr'
-                          ? 'Décrivez votre projet'
-                          : 'Describe your project'}{' '}
-                        *
-                      </label>
-                      <textarea
-                        name="description"
-                        value={formData.description}
-                        onChange={handleChange}
-                        required
-                        rows={5}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
-                      ></textarea>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center"
-                    >
-                      <Send className="mr-2 w-5 h-5" />
-                      {language === 'fr'
-                        ? 'Envoyer & recevoir mon diagnostic'
-                        : 'Send & receive my assessment'}
-                    </button>
-
-                    <p className="text-sm text-gray-600 text-center">
-                      {language === 'fr'
-                        ? 'Réponse sous 24h ouvrées'
-                        : 'Response within 24 business hours'}
-                    </p>
-                  </form>
                 )}
+
+                {/* Google Form Embed - Made responsive */}
+                <div className={`relative w-full ${isIframeLoaded ? 'block' : 'hidden'}`}>
+                  <div className="relative pb-[140%] md:pb-[70%] lg:pb-[90%]"> {/* Aspect ratio container */}
+                    <iframe
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSfHSqtVIz7McSNr6epLNOaf2SStGiT4pop2nQ1YBonIf7QXkg/viewform?embedded=true"
+                      className="absolute top-0 left-0 w-full h-full rounded-lg border-0"
+                      onLoad={handleIframeLoad}
+                    >
+                      Loading…
+                    </iframe>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2 text-center">
+                    {language === 'fr'
+                      ? 'Si le formulaire ne s\'affiche pas, '
+                      : 'If the form doesn\'t appear, '}
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfHSqtVIz7McSNr6epLNOaf2SStGiT4pop2nQ1YBonIf7QXkg/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-600 hover:underline"
+                    >
+                      {language === 'fr' ? 'cliquez ici' : 'click here'}
+                    </a>
+                  </p>
+                </div>
+
+                {/* Alternative: Direct link button */}
+                <div className="mt-6 text-center">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfHSqtVIz7McSNr6epLNOaf2SStGiT4pop2nQ1YBonIf7QXkg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
+                  >
+                    {language === 'fr'
+                      ? 'Ouvrir le formulaire dans un nouvel onglet'
+                      : 'Open form in new tab'}
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -336,6 +159,33 @@ export function Contact() {
                     </span>
                   </div>
                 </div>
+              </div>
+
+              {/* Additional Info Box */}
+              <div className="mt-6 bg-gray-50 rounded-2xl p-6">
+                <h4 className="font-bold text-gray-900 mb-3">
+                  {language === 'fr' ? 'À propos du formulaire' : 'About the form'}
+                </h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start">
+                    <span className="text-primary-600 mr-2">•</span>
+                    {language === 'fr' 
+                      ? 'Formulaire Google sécurisé' 
+                      : 'Secure Google Form'}
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary-600 mr-2">•</span>
+                    {language === 'fr'
+                      ? 'Réponse garantie sous 24h'
+                      : 'Guaranteed response within 24h'}
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary-600 mr-2">•</span>
+                    {language === 'fr'
+                      ? 'Données confidentielles'
+                      : 'Confidential data'}
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

@@ -239,7 +239,7 @@ export function About() {
               <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-gray-900 mb-2">
-                  {language === 'fr' ? 'Encadré légal' : 'Legal notice'}
+                  {language === 'fr' ? 'Mentions légales' : 'Legal notice'}
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   {language === 'fr'

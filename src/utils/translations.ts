@@ -130,7 +130,7 @@ export const translations = {
       contact: 'Contact',
       startFile: 'Start My Application',
     },
-    Contact: {
+    contact: {
       phone_number: phone_number,
       email: 'kuidouchancel@gmail.com'
     },
