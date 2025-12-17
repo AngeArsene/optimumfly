@@ -16,9 +16,9 @@ export const translations = {
       programs: 'Programmes',
       howItWorks: 'Comment ça marche',
       resources: 'Ressources',
-      about: 'À propos',
+      about: 'Nous',
       contact: 'Contact',
-      startFile: 'Démarrer mon dossier',
+      startFile: 'Mon dossier',
     },
     contact: {
       phone_number: phone_number,
