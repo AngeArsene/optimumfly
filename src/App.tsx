@@ -10,6 +10,7 @@ import { Resources } from './pages/Resources';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { ScrollToTop } from './components/ScrollToTop';
+import { Programs } from './pages/Programs';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/countries" element={<Countries />} />
+              <Route path="/programs" element={<Programs />} />
               <Route path="/how-it-works" element={<HowItWorks />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/about" element={<About />} />

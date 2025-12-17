@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import favicon from '../../assets/favicon/favicon-32x32.png';
+// import favicon from '../../assets/favicon/favicon.jpeg';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +13,7 @@ export function Header() {
     { label: t('nav.home'), path: '/' },
     { label: t('nav.services'), path: '/services' },
     { label: t('nav.countries'), path: '/countries' },
+    { label: t('nav.programs'), path: '/programs' },
     { label: t('nav.howItWorks'), path: '/how-it-works' },
     { label: t('nav.resources'), path: '/resources' },
     { label: t('nav.about'), path: '/about' },
@@ -25,11 +26,11 @@ export function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center">
+            {/* <div className="w-10 h-10 rounded-lg flex items-center justify-center">
               <img src={favicon} alt="" />
-            </div>
-            <span className="font-bold text-xl text-primary-900 hidden sm:block">
+            </div> */}
+            <span className="font-bold text-xl text-primary-900">
               {t('brandName')}
             </span>
           </Link>

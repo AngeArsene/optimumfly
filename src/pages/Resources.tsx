@@ -12,7 +12,9 @@ import {
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function Resources() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
+
+  const whatsappBaseLink = `https://wa.me/${t('contact.phone_number')}?text=`;
 
   const guides = [
     {
@@ -23,8 +25,8 @@ export function Resources() {
           ? 'Tout ce qu\'il faut savoir sur le permis d\'études canadien, du choix du programme aux démarches après l\'arrivée.'
           : 'Everything you need to know about the Canadian study permit, from choosing a program to procedures after arrival.',
       link: language === 'fr'
-        ? 'https://wa.me/237699443818?text=Bonjour, je suis intéressé(e) par votre guide "Étudier au Canada". Pouvez-vous m\'en dire plus ou me mettre en contact avec un conseiller ?'
-        : 'https://wa.me/237699443818?text=Hello, I am interested in your "Studying in Canada" guide. Could you tell me more about it or put me in touch with an advisor?',
+        ? whatsappBaseLink + 'Bonjour, je suis intéressé(e) par votre guide "Étudier au Canada". Pouvez-vous m\'en dire plus ou me mettre en contact avec un conseiller ?'
+        : whatsappBaseLink + 'Hello, I am interested in your "Studying in Canada" guide. Could you tell me more about it or put me in touch with an advisor?',
     },
     {
       icon: Plane,
@@ -34,8 +36,8 @@ export function Resources() {
           ? 'Explication complète du processus de demande de visa visiteur, documents requis et erreurs à éviter.'
           : 'Complete explanation of the visitor visa application process, required documents and errors to avoid.',
       link: language === 'fr'
-        ? 'https://wa.me/237699443818?text=Bonjour, je suis intéressé(e) par votre guide "Visa visiteur Canada". Pouvez-vous m\'en dire plus ou me mettre en contact avec un conseiller ?'
-        : 'https://wa.me/237699443818?text=Hello, I am interested in your "Canada visitor visa" guide. Could you tell me more about it or put me in touch with an advisor?',
+        ? whatsappBaseLink + 'Bonjour, je suis intéressé(e) par votre guide "Visa visiteur Canada". Pouvez-vous m\'en dire plus ou me mettre en contact avec un conseiller ?'
+        : whatsappBaseLink + 'Hello, I am interested in your "Canada visitor visa" guide. Could you tell me more about it or put me in touch with an advisor?',
     },
     {
       icon: Briefcase,
@@ -48,8 +50,8 @@ export function Resources() {
           ? 'Synthèse des programmes de travailleurs qualifiés : points, langues, expérience et procédures.'
           : 'Summary of skilled worker programs: points, languages, experience and procedures.',
       link: language === 'fr'
-        ? 'https://wa.me/237699443818?text=Bonjour, je suis intéressé(e) par votre guide "Travailleurs qualifiés". Pouvez-vous m\'en dire plus ou me mettre en contact avec un conseiller ?'
-        : 'https://wa.me/237699443818?text=Hello, I am interested in your "Skilled workers" guide. Could you tell me more about it or put me in touch with an advisor?',
+        ? whatsappBaseLink + 'Bonjour, je suis intéressé(e) par votre guide "Travailleurs qualifiés". Pouvez-vous m\'en dire plus ou me mettre en contact avec un conseiller ?'
+        : whatsappBaseLink + 'Hello, I am interested in your "Skilled workers" guide. Could you tell me more about it or put me in touch with an advisor?',
     },
   ];
 

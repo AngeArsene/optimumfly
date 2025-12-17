@@ -1,6 +1,7 @@
 const currentYear = new Date().getFullYear();
 
-const phone_number = '+237699443818';
+const phone_number = '+237659159860';
+const email_address = 'hello@optimumfly.com';
 
 export const translations = {
   fr: {
@@ -11,7 +12,8 @@ export const translations = {
     nav: {
       home: 'Accueil',
       services: 'Services',
-      countries: 'Pays & Programmes',
+      countries: 'Pays',
+      programs: 'Programmes',
       howItWorks: 'Comment ça marche',
       resources: 'Ressources',
       about: 'À propos',
@@ -20,7 +22,7 @@ export const translations = {
     },
     contact: {
       phone_number: phone_number,
-      email: 'kuidouchancel@gmail.com'
+      email: email_address
     },
     hero: {
       title: 'Accompagnement complet pour vos visas et documents de voyage',
@@ -123,7 +125,8 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
-      countries: 'Countries & Programs',
+      countries: 'Countries',
+      programs: 'Programs',
       howItWorks: 'How It Works',
       resources: 'Resources',
       about: 'About Us',
@@ -132,7 +135,7 @@ export const translations = {
     },
     contact: {
       phone_number: phone_number,
-      email: 'kuidouchancel@gmail.com'
+      email: email_address
     },
     hero: {
       title: 'Complete support for your visas and travel documents',
