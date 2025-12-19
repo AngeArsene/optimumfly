@@ -1,0 +1,20 @@
+# Security Contact Information for Optimum Fly
+# If you discover a security vulnerability, please report it to us.
+
+Contact: mailto:hello@optimumfly.com
+Contact: tel:+237659159860
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en, fr
+Canonical: https://optimumfly.com/.well-known/security.txt
+
+# Our security acknowledgments page
+Acknowledgments: https://optimumfly.com/security-acknowledgments
+
+# Our security policy
+Policy: https://optimumfly.com/security-policy
+
+# PGP Key (if applicable)
+# Encryption: https://optimumfly.com/pgp-key.txt
+
+# Hiring
+Hiring: https://optimumfly.com/careers

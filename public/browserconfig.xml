@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="/assets/favicon.jpg"/>
+            <square150x150logo src="/assets/favicon.jpg"/>
+            <square310x310logo src="/assets/favicon.jpg"/>
+            <wide310x150logo src="/assets/favicon.jpg"/>
+            <TileColor>#0052cc</TileColor>
+        </tile>
+        <notification>
+            <polling-uri src="https://optimumfly.com/notifications/feed1"/>
+            <polling-uri2 src="https://optimumfly.com/notifications/feed2"/>
+            <polling-uri3 src="https://optimumfly.com/notifications/feed3"/>
+            <polling-uri4 src="https://optimumfly.com/notifications/feed4"/>
+            <polling-uri5 src="https://optimumfly.com/notifications/feed5"/>
+            <frequency>30</frequency>
+            <cycle>1</cycle>
+        </notification>
+    </msapplication>
+</browserconfig>

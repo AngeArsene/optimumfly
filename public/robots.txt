@@ -1,0 +1,46 @@
+# Robots.txt for Optimum Fly
+# https://optimumfly.com/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*sessionid=
+Disallow: /*?*sid=
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://optimumfly.com/sitemap.xml
+Sitemap: https://optimumfly.com/sitemap-images.xml
+
+# Crawl delay for all bots (in seconds)
+Crawl-delay: 1
+
+# Host declaration (preferred domain)
+Host: https://optimumfly.com

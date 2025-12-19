@@ -1,0 +1,33 @@
+/* TEAM */
+
+Team Lead & Founder: Marie Kamga
+Contact: hello [at] optimumfly.com
+Location: Douala, Cameroon
+
+Senior Immigration Consultant: Jean-Paul Ndi
+Location: Douala, Cameroon
+
+Administrative Coordinator: Françoise Mbida
+Location: Yaoundé, Cameroon
+
+Skilled Worker Advisor: Emmanuel Fon
+Location: Douala, Cameroon
+
+/* THANKS */
+
+Immigration Refugees and Citizenship Canada (IRCC)
+Government of Canada
+Cameroon Ministry of External Relations
+All our valued clients since 2018
+
+/* SITE */
+
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: React 18, TypeScript, Tailwind CSS
+Software: VS Code, Git, GitHub
+Hosting: Optimized for speed and security
+Languages: English, French
+
+Last update: 2024/12/19
+Doctype: HTML5
+IDE: Visual Studio Code

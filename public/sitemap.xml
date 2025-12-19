@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://optimumfly.com/</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/?lang=fr"/>
+    </url>
+    
+    <!-- Services Page -->
+    <url>
+        <loc>https://optimumfly.com/services</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/services"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/services?lang=fr"/>
+    </url>
+    
+    <!-- Countries Page -->
+    <url>
+        <loc>https://optimumfly.com/countries</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/countries"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/countries?lang=fr"/>
+    </url>
+    
+    <!-- Programs Page -->
+    <url>
+        <loc>https://optimumfly.com/programs</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/programs"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/programs?lang=fr"/>
+    </url>
+    
+    <!-- How It Works Page -->
+    <url>
+        <loc>https://optimumfly.com/how-it-works</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/how-it-works"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/how-it-works?lang=fr"/>
+    </url>
+    
+    <!-- Resources Page -->
+    <url>
+        <loc>https://optimumfly.com/resources</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/resources"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/resources?lang=fr"/>
+    </url>
+    
+    <!-- About Page -->
+    <url>
+        <loc>https://optimumfly.com/about</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/about"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/about?lang=fr"/>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://optimumfly.com/contact</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://optimumfly.com/contact"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://optimumfly.com/contact?lang=fr"/>
+    </url>
+    
+</urlset>
